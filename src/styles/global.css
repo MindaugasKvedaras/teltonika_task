@@ -120,6 +120,11 @@ select {
     color: var(--secondary-blue);
 }
 
+.table {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .app_userlist-table {
     border-collapse: collapse;
 }

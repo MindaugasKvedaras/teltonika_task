@@ -19,7 +19,8 @@ const UserList = () => {
   return (
     <div className='app_userlist-box'>
       <h1>All developers</h1>
-          <table className='app_userlist-table'>
+        <div className="table">
+        <table className='app_userlist-table'>
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
@@ -39,7 +40,9 @@ const UserList = () => {
             </tr>
             ))}
           </table>
+        </div>
       <h1>Front-enders</h1>
+      <div className="table">
         <table className='app_userlist-table'>
               <tr>
                 <th>First Name</th>
@@ -60,9 +63,11 @@ const UserList = () => {
               </tr>
               ))}
         </table>
+        </div>
         {backenders.length > 0 ? (
         <>
         <h1>Back-enders</h1>
+        <div className="table">
         <table className='app_userlist-table'>
               <tr>
                 <th>First Name</th>
@@ -83,6 +88,7 @@ const UserList = () => {
               </tr>
               ))}
         </table>
+        </div>
         </>
         ) : (
           null
@@ -90,6 +96,7 @@ const UserList = () => {
         {fullStackDevelopers.length > 0 ? (
         <>
         <h1>Full-stack developers</h1>
+        <div className="table">
         <table className='app_userlist-table'>
               <tr>
                 <th>First Name</th>
@@ -110,6 +117,7 @@ const UserList = () => {
               </tr>
               ))}
         </table>
+        </div>
         </>
         ) : (
           null
