@@ -63,18 +63,14 @@ const Home = () => {
     }
 
     return (
-        <>
+        <div className="app_developer-form">
+        <h1>New developer</h1>
             <form onSubmit={onSubmit} className="app_user-form">
-                <label htmlFor="fname">First name:</label>
-                    <input type="text" id="fname" name="fName" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
-                <label htmlFor="lname">Last name:</label>
-                    <input type="text" id="lname" name="lName" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
-                <label htmlFor="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required onChange={handleOnInputChange}/>
-                <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" required onChange={handleOnInputChange}/>
-                <label htmlFor="fname">Age:</label>
-                    <input type="number" id="age" name="age" min="16" max="80" step="1" required onChange={handleOnInputChange}/>
+                    <input type="text" id="fname" name="fName" placeholder="First Name" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
+                    <input type="text" id="lname" name="lName" placeholder="Last Name" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required onChange={handleOnInputChange}/>
+                    <input type="password" id="password" name="password" placeholder="Password" required onChange={handleOnInputChange}/>
+                    <input type="number" id="age" name="age" min="16" max="80" step="1" placeholder="Age" required onChange={handleOnInputChange}/>
                 <p>Gender:</p>
                 <label>
                     <input type="radio" id="malegender" name="gender" value="Male" checked={gender === 'Male'} onChange={handleOnInputChange} />
@@ -89,9 +85,9 @@ const Home = () => {
                         <option id="fullstack" value="Full-stack">Full-stack</option>
                     </select>
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Add developer" />
             </form>
-        </>
+        </div>
   );
 }
 

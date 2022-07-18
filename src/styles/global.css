@@ -49,6 +49,20 @@ html {
     border-bottom: solid 2px var(--primary-blue);
 }
 
+.app_developer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
+    border: solid 1px black;
+}
+
+.app_developer-form h1 {
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
 .app_user-form {
     display: flex;
     flex-direction: column;
@@ -74,6 +88,25 @@ input:invalid:focus {
     width: 100px;
     height: 30px;
     text-align: center;
+}
+
+input[type="submit"] {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 3px;
+    width: 150px;
+    margin-bottom: 8px;
+}
+
+input[type="radio"] {
+    margin: 6px;
+}
+
+select {
+    font-size: 15px;
+    margin-left: 10px;
+    width: 90px;
+    height: 30px;
 }
 
 .app_userlist-box {
