@@ -1,0 +1,114 @@
+html {
+    background-color: var(--body-background);
+  }
+  body, * {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    box-sizing: border-box;
+  
+  }
+  
+  :root {
+    --primary-blue: #0078AA;
+    --secondary-blue: #3AB4F2;
+    --red: #f02d34;
+    --green: #5FD068;
+    --yellow: #FFD93D;
+    --body-background: #f8f4f1;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+.app_header {
+    margin: 10px;
+    text-align: center;
+}
+
+.app_navbar {
+    display: flex;
+    margin: 10px;
+}
+
+.app_navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app_navbar a {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.app_navbar a:hover {
+    border-bottom: solid 2px var(--primary-blue);
+}
+
+.app_user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#fname, #lname, #email, #password {
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+input:invalid:focus {
+    box-shadow: 0 0 5px 1px red;
+}
+
+
+#age {
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+
+.app_userlist-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app_userlist-box h1 {
+    color: var(--secondary-blue);
+}
+
+.app_userlist-table {
+    border-collapse: collapse;
+}
+
+.app_userlist-table td, .app_userlist-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.app_userlist-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.app_userlist-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#user-data:hover {
+    background-color: #ddd;
+}
+

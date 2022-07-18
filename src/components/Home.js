@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+
+export const users = [
+{
+    id: 1,
+    fName: "Juozas",
+    lName: "Petkevičius",
+    email: "juozas.petkus@gmail.com",
+    password: "",
+    age: 69,
+    gender: "Male",
+    category: "Full-stack"
+},
+{
+    id: 2,
+    fName: "Ramunė",
+    lName: "Banienė",
+    email: "ramune.ban@gmail.com",
+    password: "",
+    age: 49,
+    gender: "Female",
+    category: "Front-end"  
+}];
+
+let nextId = 3;
+
+const Home = () => {
+    const [gender, setGender] = useState('Male');
+    const [category, setCategory] = useState('Front-end');
+    const [formData, setFormData] = useState({id: '', fName: '', lName: '', age: '', category, gender, email: ''});
+
+    const resetRadioSate = () => {
+        setGender('');
+    }
+
+    const resetCategory = () => {
+        setCategory('');
+    }
+
+    const handleOnInputChange = (e) => {
+        const { value, name } = e.target;
+        setGender(e.target.value);
+        setCategory(e.target.value);
+    
+        // merge previous formData with the new value from input
+        setFormData({
+          ...formData,
+          [name]: value,
+        })
+      }
+    
+    const onSubmit = (e) => {
+
+        e.preventDefault();
+        const { fName, lName, age, gender, category, email } = formData;
+        users.push({id: nextId, fName, lName, age, gender, category, email });
+        console.log(users);
+        nextId++;
+        setFormData({fName: '', lName: '', age: '', email: ''});
+        resetRadioSate();
+        resetCategory();
+        e.target.reset();
+    }
+
+    return (
+        <>
+            <form onSubmit={onSubmit} className="app_user-form">
+                <label htmlFor="fname">First name:</label>
+                    <input type="text" id="fname" name="fName" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
+                <label htmlFor="lname">Last name:</label>
+                    <input type="text" id="lname" name="lName" required minlength="3" maxlength="15" onChange={handleOnInputChange}/>
+                <label htmlFor="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required onChange={handleOnInputChange}/>
+                <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password" required onChange={handleOnInputChange}/>
+                <label htmlFor="fname">Age:</label>
+                    <input type="number" id="age" name="age" min="16" max="80" step="1" required onChange={handleOnInputChange}/>
+                <p>Gender:</p>
+                <label>
+                    <input type="radio" id="malegender" name="gender" value="Male" checked={gender === 'Male'} onChange={handleOnInputChange} />
+                    Male
+                    <input type="radio" id="femalegender" name="gender" value="Female" checked={gender === 'Female'} onChange={handleOnInputChange} />
+                    Female
+                </label>
+                <label>Developer category:
+                    <select name="category" onChange={handleOnInputChange}>
+                        <option id="frontend" value="Front-end">Front-end</option>
+                        <option id="backend"  value="Back-end">Back-end</option>
+                        <option id="fullstack" value="Full-stack">Full-stack</option>
+                    </select>
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        </>
+  );
+}
+
+export default Home;
