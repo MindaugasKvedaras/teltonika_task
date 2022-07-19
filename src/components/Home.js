@@ -112,8 +112,6 @@ const Home = () => {
                         <option id="react"  value="React">React</option>
                     </select>
                 </label>
-
-
                 <input type="submit" value="Add developer" />
             </form>
         </div>

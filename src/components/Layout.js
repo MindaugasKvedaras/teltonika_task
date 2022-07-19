@@ -1,14 +1,20 @@
+import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
+import { Divide as Hamburger } from 'hamburger-react';
 import Header from "./Header";
 
 const Layout = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <>
     <header>
         <Header />
     </header>
       <nav className='app_navbar'>
-        <div className='app_navbar-links'>
+        <Hamburger color="#0078AA" fontSize={27} toggled={isOpen} toggle={setOpen} />
+        {isOpen && (
+          <div className='app_navbar-links'>
             <div className='app_dropdown-menu'>
                 <button className='app_dropdown-menu_home-btn'>
                     <Link to="/">Add new developers</Link>
@@ -29,6 +35,7 @@ const Layout = () => {
             </div>  
           </div>
         </div>
+        )}
       </nav>
 
       <Outlet />

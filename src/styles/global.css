@@ -32,10 +32,25 @@ html {
     margin: 10px;
 }
 
+.hamburger-react {
+    display: none;
+}
+
 .app_navbar-links {
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    top: 12%;
+    left: 0;
+    margin: 5px;
+    padding: 10px;
+    background-color: var(--body-background);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 4;
+    width: 210px;
+    height: 100vh;
 }
 
 .app_dropdown-menu {
@@ -102,11 +117,12 @@ html {
     justify-content: center;
     width: 300px;
     margin: auto;
+    margin-bottom: 20px;
     border: solid 1px black;
 }
 
 .app_developer-form h1 {
-    margin-bottom: 15px;
+    margin: 15px;
     color: var(--primary-blue);
 }
 .app_user-form {
@@ -121,7 +137,7 @@ html {
     height: 30px;
     text-align: center;
     font-size: 15px;
-
+    border-radius: 10px;
 }
 
 input:invalid:focus {
@@ -134,14 +150,18 @@ input:invalid:focus {
     width: 100px;
     height: 30px;
     text-align: center;
+    border-radius: 10px;
 }
 
 input[type="submit"] {
     font-size: 15px;
     font-weight: 600;
-    padding: 3px;
+    padding: 5px;
     width: 150px;
-    margin-bottom: 8px;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--primary-blue);
+    margin: 10px;
 }
 
 input[type="radio"] {
@@ -153,6 +173,7 @@ select {
     margin-left: 10px;
     width: 90px;
     height: 30px;
+    border-radius: 10px;
 }
 
 .app_userlist-box {
@@ -203,6 +224,11 @@ select {
 }
 
 @media screen and (max-width:1400px) {
+
+    .hamburger-react {
+        display: flex;
+    }
+
     .table {
       align-items: flex-start;
       justify-content: flex-start;
