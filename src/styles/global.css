@@ -23,31 +23,30 @@ html {
   }
 
 .app_header {
-    margin: 10px;
+    padding-bottom: 10px;
     text-align: center;
+    border-bottom: solid 2px var(--primary-blue);
 }
 
-.app_navbar {
-    display: flex;
-    margin: 10px;
+.hamburger-react {
+    display: none;
 }
 
-/* .hamburger-react {
-} */
 
-.app_navbar-links {
+.app_navbar-links, .app_navbar-links_desktop {
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    top: 12%;
     left: 0;
     margin: 5px;
     padding: 10px;
     background-color: var(--body-background);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    z-index: 4;
+    border-right: solid 2px var(--primary-blue);
+
+    /* z-index: 4; */
     width: 210px;
     height: 100vh;
 }
@@ -116,6 +115,7 @@ html {
     justify-content: center;
     width: 300px;
     margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
     border: solid 1px black;
 }
@@ -224,10 +224,6 @@ select {
 
 @media screen and (max-width:1400px) {
 
-    .hamburger-react {
-        display: flex;
-    }
-
     .table {
       align-items: flex-start;
       justify-content: flex-start;
@@ -237,4 +233,23 @@ select {
         font-size: 25px;
     }
     
-}   
+} 
+
+@media screen and (max-width:800px) {
+    .hamburger-react {
+        display: flex;
+        z-index: 4;
+        /* border-right: solid 2px var(--primary-blue);
+        margin-right: 300px; */
+    }
+
+    .app_navbar-links_desktop {
+        display: none;
+    }
+
+    .app_navbar-links {
+        padding-top: 13%;
+        top: 3.1%;
+    }
+
+}
