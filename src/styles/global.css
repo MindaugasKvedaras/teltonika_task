@@ -121,12 +121,16 @@ select {
 }
 
 .table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     overflow-x: auto;
 }
 
 .app_userlist-table {
     border-collapse: collapse;
+    margin: 10px;
 }
 
 .app_userlist-table td, .app_userlist-table th {
