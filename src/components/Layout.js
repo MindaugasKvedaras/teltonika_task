@@ -18,16 +18,14 @@ const Layout = () => {
             <button className='app_dropdown-menu_btn'>Front-end developers</button>
             <div className='app_dropdown-menu_content'>
                 <Link to="/junior-front-end-developers">Junior</Link>
-                <Link to="/">Mid</Link>
-                <Link to="/">Senior</Link>
+                <Link to="/senior-front-end-developers">Senior</Link>
             </div>  
           </div>
           <div className='app_dropdown-menu'>
             <button className='app_dropdown-menu_btn'>Back-end developers</button>
             <div className='app_dropdown-menu_content'>
-                <Link to="/junior-front-end-developers">Junior</Link>
-                <Link to="/">Mid</Link>
-                <Link to="/">Senior</Link>
+                <Link to="/junior-back-end-developers">Junior</Link>
+                <Link to="/senior-back-end-developers">Senior</Link>
             </div>  
           </div>
         </div>
