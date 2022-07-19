@@ -32,9 +32,8 @@ html {
     margin: 10px;
 }
 
-.hamburger-react {
-    display: none;
-}
+/* .hamburger-react {
+} */
 
 .app_navbar-links {
     position: absolute;
