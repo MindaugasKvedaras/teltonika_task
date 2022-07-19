@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import { Divide as Hamburger } from 'hamburger-react';
-import Header from "./Header";
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = () => {
   const [isOpen, setOpen] = useState(false);
@@ -57,6 +58,9 @@ const Layout = () => {
           </div>
           )}
       <Outlet />
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 };

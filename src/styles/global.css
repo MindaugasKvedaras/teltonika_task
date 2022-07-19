@@ -23,7 +23,7 @@ html {
   }
 
 .app_header {
-    padding-bottom: 10px;
+    padding: 10px;
     text-align: center;
     border-bottom: solid 2px var(--primary-blue);
 }
@@ -39,14 +39,13 @@ html {
     flex-direction: column;
     gap: 10px;
     left: 0;
+    top: 2.36rem;
     margin: 5px;
     padding: 10px;
     background-color: var(--body-background);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-right: solid 2px var(--primary-blue);
-
-    /* z-index: 4; */
     width: 210px;
     height: 100vh;
 }
@@ -112,7 +111,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    /* height: 100vh; */
     width: 300px;
     margin: auto;
     margin-top: 20px;
@@ -128,7 +128,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 
@@ -179,8 +178,8 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin: 10px;
+    height: 100vh;
 }
 
 .app_userlist-box h1 {
@@ -222,6 +221,20 @@ select {
     background-color: #ddd;
 }
 
+.app_footer {
+    position: absolute;
+    text-align: center;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    top: 59rem;
+    z-index: 5;
+    background-color: var(--body-background);
+    border-top: solid 2px var(--primary-blue);
+  }
+
 @media screen and (max-width:1400px) {
 
     .table {
@@ -232,13 +245,12 @@ select {
     .app_userlist-box h1 {
         font-size: 25px;
     }
-    
 } 
 
 @media screen and (max-width:800px) {
     .hamburger-react {
         display: flex;
-        z-index: 4;
+        z-index: 10;
         /* border-right: solid 2px var(--primary-blue);
         margin-right: 300px; */
     }
@@ -249,7 +261,12 @@ select {
 
     .app_navbar-links {
         padding-top: 13%;
-        top: 1.75rem;
+        top: 2.4rem;
+        z-index: 9;
     }
 
+    .app_footer {
+        margin: 5px;
+        top: 50rem;
+    }
 }
