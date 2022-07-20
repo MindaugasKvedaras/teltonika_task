@@ -6,7 +6,7 @@ import JuniorFrontEndList from './components/FrontEndList/JuniorFrontEndList';
 import SeniorFrontEndList from './components/FrontEndList/SeniorFrontEndList';
 import JuniorBackEndList from './components/BackEndList/JuniorBackEndList';
 import SeniorBackEndList from './components/BackEndList/SeniorBackEndList';
-
+import SearchDeveloper from './components/SearchDeveloper';
 import './styles/global.css';
 
 
@@ -22,6 +22,7 @@ const App = () => {
                 <Route path="/senior-front-end-developers" element={<SeniorFrontEndList />} />
                 <Route path="/junior-back-end-developers" element={<JuniorBackEndList />} />
                 <Route path="/senior-back-end-developers" element={<SeniorBackEndList />} />
+                <Route path="/search-developer" element={<SearchDeveloper />} />
             </Route>        
         </Routes>  
     </BrowserRouter>

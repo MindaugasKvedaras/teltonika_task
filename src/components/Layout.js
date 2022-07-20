@@ -32,6 +32,11 @@ const Layout = () => {
                   <Link to="/senior-back-end-developers">Senior</Link>
               </div>  
             </div>
+            <div className='app_dropdown-menu'>
+                  <button className='app_dropdown-menu_home-btn'>
+                      <Link to="/search-developer">Search developer</Link>
+                  </button>
+              </div>
           </div>
           <Hamburger color="#0078AA" fontSize={27} toggled={isOpen} toggle={setOpen} />
           {isOpen && (
@@ -55,6 +60,11 @@ const Layout = () => {
                   <Link to="/senior-back-end-developers">Senior</Link>
               </div>  
             </div>
+            <div className='app_dropdown-menu'>
+                  <button className='app_dropdown-menu_home-btn'>
+                      <Link to="/search-developer">Add new developers</Link>
+                  </button>
+              </div>
           </div>
           )}
       <Outlet />

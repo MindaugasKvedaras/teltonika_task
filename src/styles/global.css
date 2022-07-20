@@ -107,6 +107,22 @@ html {
     background-color: var(--secondary-blue);
 }
 
+.app_search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+}
+
+.app_search {
+    margin-top: 10px;
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+    font-size: 15px;
+}
+
 .app_developer-form {
     display: flex;
     flex-direction: column;
@@ -179,6 +195,7 @@ select {
     flex-direction: column;
     align-items: center;
     margin: 10px;
+    margin-left: 60px;
     height: 100vh;
 }
 
@@ -192,11 +209,11 @@ select {
     justify-content: center;
     width: 100%;
     overflow-x: auto;
+    margin-top: 15px;
 }
 
 .app_userlist-table {
     border-collapse: collapse;
-
 }
 
 .app_userlist-table td, .app_userlist-table th {
@@ -269,4 +286,9 @@ select {
         margin: 5px;
         top: 40rem;
     }
+
+    .app_userlist-table {
+        margin: 0 15px 0 15px;
+    }
+
 }
