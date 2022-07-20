@@ -4,10 +4,9 @@ import { olddevelopers } from '../developerdata/developers';
 
 const newdevelopers = [];
 
-export const users = [...olddevelopers, ...newdevelopers];
+export const users = [].concat(olddevelopers, newdevelopers);
 
-
-let nextId = 4;
+let nextId = 31;
 
 const Home = () => {
     const [gender, setGender] = useState('Male');
@@ -39,7 +38,7 @@ const Home = () => {
 
         e.preventDefault();
         const { fName, lName, age, gender, category, email, level, framework } = formData;
-        newdevelopers.push({id: nextId, fName, lName, age, gender, category, email, level, framework });
+        users.push({id: nextId, fName, lName, age, gender, category, email, level, framework });
         console.log(users);
         nextId++;
         setFormData({fName: '', lName: '', age: '', email: ''});
