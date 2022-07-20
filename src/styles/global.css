@@ -262,6 +262,10 @@ select {
     .app_userlist-box h1 {
         font-size: 25px;
     }
+
+    .app_search-container {
+        margin-left: 0;
+    }
 } 
 
 @media screen and (max-width:800px) {

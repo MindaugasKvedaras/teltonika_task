@@ -62,7 +62,7 @@ const Layout = () => {
             </div>
             <div className='app_dropdown-menu'>
                   <button className='app_dropdown-menu_home-btn'>
-                      <Link to="/search-developer">Add new developers</Link>
+                      <Link to="/search-developer">Search developer</Link>
                   </button>
               </div>
           </div>
