@@ -28,6 +28,10 @@ html {
     border-bottom: solid 2px var(--primary-blue);
 }
 
+.app_header img {
+    width: 20%;
+}
+
 .hamburger-react {
     display: none;
 }
@@ -39,15 +43,16 @@ html {
     flex-direction: column;
     gap: 10px;
     left: 0;
-    top: 2.36rem;
+    top: 5.9rem;
     margin: 5px;
     padding: 10px;
     background-color: var(--body-background);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-right: solid 2px var(--primary-blue);
+    border-bottom: solid 2px var(--primary-blue);
     width: 210px;
-    height: 100vh;
+    height: auto;
 }
 
 .app_dropdown-menu {
@@ -214,6 +219,7 @@ select {
 
 .app_userlist-table {
     border-collapse: collapse;
+    margin-left: 10px;
 }
 
 .app_userlist-table td, .app_userlist-table th {
@@ -244,14 +250,15 @@ select {
 }
 
 .app_footer {
-    position: absolute;
+    position: relative;
     text-align: center;
     height: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    left: 0;
-    right: 0;
-    top: 59rem;
+    /* margin-right: auto;
+    margin-left: auto; */
+    /* left: 0;
+    right: 0; */
+    padding: 10px;
+    bottom: 0;
     z-index: 5;
     background-color: var(--body-background);
     border-top: solid 2px var(--primary-blue);
@@ -277,8 +284,6 @@ select {
     .hamburger-react {
         display: flex;
         z-index: 10;
-        /* border-right: solid 2px var(--primary-blue);
-        margin-right: 300px; */
     }
 
     .app_navbar-links_desktop {
@@ -293,7 +298,6 @@ select {
 
     .app_footer {
         margin: 5px;
-        top: 40rem;
     }
 
     .app_userlist-table {
