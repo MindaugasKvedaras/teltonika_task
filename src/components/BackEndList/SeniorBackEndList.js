@@ -32,15 +32,15 @@ const FrontEndList = () => {
                 <th>E-mail</th>
             </tr>
               {SeniorVueBackenders.map((user) => (
-              <tr id="user-data">
-                <td key={user.id}>{user.fName}</td>
-                <td key={user.id}>{user.lName}</td>
-                <td key={user.id}>{user.age}</td>
-                <td key={user.id}>{user.gender}</td>
-                <td key={user.id}>{user.category}</td>
-                <td key={user.id}>{user.level}</td>
-                <td key={user.id}>{user.framework}</td>
-                <td key={user.id}>{user.email}</td>
+              <tr key={user.id} id="user-data">
+                <td>{user.fName}</td>
+                <td>{user.lName}</td>
+                <td>{user.age}</td>
+                <td>{user.gender}</td>
+                <td>{user.category}</td>
+                <td>{user.level}</td>
+                <td>{user.framework}</td>
+                <td>{user.email}</td>
               </tr>
               ))}
           </tbody>
@@ -69,15 +69,15 @@ const FrontEndList = () => {
                 <th>E-mail</th>
             </tr>
               {SeniorReactBackenders.map((user) => (
-              <tr id="user-data">
-                <td key={user.id}>{user.fName}</td>
-                <td key={user.id}>{user.lName}</td>
-                <td key={user.id}>{user.age}</td>
-                <td key={user.id}>{user.gender}</td>
-                <td key={user.id}>{user.category}</td>
-                <td key={user.id}>{user.level}</td>
-                <td key={user.id}>{user.framework}</td>
-                <td key={user.id}>{user.email}</td>
+              <tr key={user.id} id="user-data">
+                <td>{user.fName}</td>
+                <td>{user.lName}</td>
+                <td>{user.age}</td>
+                <td>{user.gender}</td>
+                <td>{user.category}</td>
+                <td>{user.level}</td>
+                <td>{user.framework}</td>
+                <td>{user.email}</td>
               </tr>
               ))}
           </tbody>
