@@ -1,42 +1,11 @@
 import React, { useState } from 'react';
+import { olddevelopers } from '../developerdata/developers';
 
-export const users = [
-{
-    id: 1,
-    fName: "Juozas",
-    lName: "Petkevičius",
-    email: "juozas.petkus@gmail.com",
-    password: "",
-    age: "69",
-    gender: "Male",
-    category: "Front-end",
-    level: "Senior",
-    framework: "React"
-},
-{
-    id: 2,
-    fName: "Ramunė",
-    lName: "Banienė",
-    email: "ramune.ban@gmail.com",
-    password: "",
-    age: "49",
-    gender: "Female",
-    category: "Front-end",
-    level: "Junior",
-    framework: "Vue"  
-},
-{
-    id: 3,
-    fName: "Ignas",
-    lName: "Softas",
-    email: "ignas.soft@gmail.com",
-    password: "",
-    age: "21",
-    gender: "Male",
-    category: "Back-end",
-    level: "Junior",
-    framework: "Vue"  
-}];
+
+const newdevelopers = [];
+
+export const users = [...olddevelopers, ...newdevelopers];
+
 
 let nextId = 4;
 
@@ -70,7 +39,7 @@ const Home = () => {
 
         e.preventDefault();
         const { fName, lName, age, gender, category, email, level, framework } = formData;
-        users.push({id: nextId, fName, lName, age, gender, category, email, level, framework });
+        newdevelopers.push({id: nextId, fName, lName, age, gender, category, email, level, framework });
         console.log(users);
         nextId++;
         setFormData({fName: '', lName: '', age: '', email: ''});
