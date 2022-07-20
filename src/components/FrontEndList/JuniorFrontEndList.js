@@ -49,7 +49,7 @@ const JuniorFrontEndList = () => {
         </div>
         </>
         ) : (
-          <p>No Junior Vue.js Front-enders,<span> </span>
+          <p className='app_no-table'>No Junior Vue.js Front-enders,<span> </span>
             <Link to="/">add</Link> new developer
           </p>
         )}
@@ -86,7 +86,7 @@ const JuniorFrontEndList = () => {
         </div>
         </>
         ) : (
-          <p>No Junior React.js Front-enders,<span> </span>
+          <p className='app_no-table'>No Junior React.js Front-enders,<span> </span>
             <Link to="/">add</Link> new developer
           </p>
         )}

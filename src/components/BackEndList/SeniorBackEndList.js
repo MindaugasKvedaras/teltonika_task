@@ -48,7 +48,7 @@ const FrontEndList = () => {
         </div>
         </>
         ) : (
-          <p>No Senior Vue.js Back-enders,<span> </span>
+          <p className='app_no-table'>No Senior Vue.js Back-enders,<span> </span>
             <Link to="/">add</Link> new developer
           </p>
         )}
@@ -86,7 +86,7 @@ const FrontEndList = () => {
         </>
         ) : (
           <>
-            <p>No Senior React.js Back-enders,<span> </span>
+            <p className='app_no-table'>No Senior React.js Back-enders,<span> </span>
               <Link to="/">add</Link> new developer
             </p>
           </>
