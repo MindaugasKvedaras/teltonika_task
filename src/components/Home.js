@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+// import { Link } from "react-router-dom";
 import { olddevelopers } from '../developerdata/developers';
 
 
-const newdevelopers = [];
+export const users = [].concat(olddevelopers);
 
-export const users = [].concat(olddevelopers, newdevelopers);
-
-let nextId = 31;
+let nextId = 51;
 
 const Home = () => {
     const [gender, setGender] = useState('Male');
@@ -14,6 +13,7 @@ const Home = () => {
     const [level, setLevel] = useState('Junior');
     const [framework, setFramework] = useState('Vue');
     const [formData, setFormData] = useState({id: '', fName: '', lName: '', age: '', category, gender, email: '', level, framework});
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const resetSelections = () => {
         setGender('');
@@ -44,12 +44,19 @@ const Home = () => {
         setFormData({fName: '', lName: '', age: '', email: ''});
         resetSelections();
         e.target.reset();
+        setIsFormSubmitted(true);
+        setTimeout(() => {
+            setIsFormSubmitted(false);
+        }, 3500);
     }
 
     return (
+       <> 
         <div className="app_developer-form">
         <h1>New developer</h1>
             <form onSubmit={onSubmit} className="app_user-form">
+            {!isFormSubmitted ? (
+                <>
                     <input type="text" id="fname" name="fName" placeholder="First Name" required minLength="3" maxLength="15" onChange={handleOnInputChange}/>
                     <input type="text" id="lname" name="lName" placeholder="Last Name" required minLength="3" maxLength="15" onChange={handleOnInputChange}/>
                     <input type="email" id="email" name="email" placeholder="E-mail" required onChange={handleOnInputChange}/>
@@ -81,8 +88,17 @@ const Home = () => {
                     </select>
                 </label>
                 <input type="submit" value="Add developer" />
+               </> 
+            ) : (
+                <div className='app_success-submitted-message_container'>
+                    <h3 className="app_success-submitted-message">
+                        Succesfully added new developer!
+                    </h3>
+                </div>  
+            )}
             </form>
-        </div>
+        </div> 
+       </>   
   );
 }
 

@@ -72,7 +72,6 @@ html {
 
 }
 
-
 .app_dropdown-menu_btn, .app_dropdown-menu_home-btn {
     background-color: var(--primary-blue);
     color: white;
@@ -116,8 +115,9 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-left: 60px;
+    min-height: 500px;
 }
 
 .app_search {
@@ -195,6 +195,20 @@ select {
     border-radius: 10px;
 }
 
+.app_success-submitted-message_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 300px;
+}
+
+.app_success-submitted-message {
+    text-align: center;
+    color: green;
+    margin: 5px;
+}
+
 .app_userlist-box {
     display: flex;
     flex-direction: column;
@@ -247,6 +261,25 @@ select {
 .app_no-table {
     text-align: center;
     margin: 10px;
+}
+
+.app_show-more-less_button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.app_no-search-results span {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.app_show-more-less_button button {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    background-color: var(--primary-blue);
 }
 
 .app_footer {

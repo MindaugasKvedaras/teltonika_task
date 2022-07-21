@@ -8,7 +8,7 @@ const SearchDeveloper = () => {
     const keys = ["fName", "lName", "gender", "age", "category", "framework", "level"];
     const search = (data) => {
       return data.filter((item) =>
-      keys.some((key) => item[key].toLowerCase().includes(query))
+      keys.some((key) => item[key].toLowerCase().startsWith(query))
       );
     };
 
@@ -19,7 +19,7 @@ const SearchDeveloper = () => {
   return (
     <div className='app_search-container'>
         <input className='app_search' placeholder="Search..." onChange={handleSearch} />
-        {<SearchTable data={search(users)}/>}
+        <SearchTable data={search(users)} query={query}/>
     </div>
   )
 }

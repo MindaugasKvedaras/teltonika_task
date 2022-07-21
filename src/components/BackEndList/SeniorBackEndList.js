@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { users } from '../Home';
 
 const FrontEndList = () => {
+
+  const [visibleVueTable, setVisibleVueTable] = useState(3);
+  const [visibleReactTable, setVisibleReactTable] = useState(3);
+
+  const showMoreItemsVueTable = () => {
+    setVisibleVueTable((prevValue) => prevValue  + 3);
+  }
+
+  const showLessItemsVueTable = () => {
+    setVisibleVueTable((prevValue) => prevValue - 3);
+  }
+
+  const showMoreItemsReactTable = () => {
+    setVisibleReactTable((prevValue) => prevValue  + 3);
+  }
+
+  const showLessItemsReactTable = () => {
+    setVisibleReactTable((prevValue) => prevValue - 3);
+  }
+
 
   const SeniorVueBackenders = users.filter(user => {
     return user.category === "Back-end" && user.level === "Senior" && user.framework === "Vue";
@@ -46,6 +66,22 @@ const FrontEndList = () => {
           </tbody>
         </table>
         </div>
+    {visibleVueTable <= 3 & SeniorVueBackenders.length > 3 ? (
+       <div className='app_show-more-less_button'>
+          <button onClick={showMoreItemsVueTable}>Show More</button>
+       </div>
+     ) : visibleVueTable >= 6 & visibleVueTable < SeniorVueBackenders.length ? (
+      <div className='app_show-more-less_button'>
+          <button onClick={showMoreItemsVueTable}>Show More</button>
+          <button onClick={showLessItemsVueTable}>Show Less</button>
+      </div>
+     ) : visibleVueTable === SeniorVueBackenders.length || visibleVueTable > SeniorVueBackenders.length ? (
+      <div className='app_show-more-less_button'>
+          <button onClick={showLessItemsVueTable}>Show Less</button>
+      </div>
+     ) : (
+       null
+     )} 
         </>
         ) : (
           <p className='app_no-table'>No Senior Vue.js Back-enders,<span> </span>
@@ -68,7 +104,7 @@ const FrontEndList = () => {
                 <th>Framework</th>
                 <th>E-mail</th>
             </tr>
-              {SeniorReactBackenders.map((user) => (
+              {SeniorReactBackenders.slice(0,visibleReactTable).map((user) => (
               <tr key={user.id} id="user-data">
                 <td>{user.fName}</td>
                 <td>{user.lName}</td>
@@ -83,6 +119,22 @@ const FrontEndList = () => {
           </tbody>
         </table>
         </div>
+    {visibleReactTable <= 3 & SeniorReactBackenders.length > 3 ? (
+       <div className='app_show-more-less_button'>
+          <button onClick={showMoreItemsReactTable}>Show More</button>
+       </div>
+     ) : visibleReactTable >= 6 & visibleReactTable < SeniorReactBackenders.length ? (
+      <div className='app_show-more-less_button'>
+          <button onClick={showMoreItemsReactTable}>Show More</button>
+          <button onClick={showLessItemsReactTable}>Show Less</button>
+      </div>
+     ) : visibleReactTable === SeniorReactBackenders.length || visibleReactTable > SeniorReactBackenders.length? (
+      <div className='app_show-more-less_button'>
+          <button onClick={showLessItemsReactTable}>Show Less</button>
+      </div>
+     ) : (
+       null
+     )} 
         </>
         ) : (
           <>
