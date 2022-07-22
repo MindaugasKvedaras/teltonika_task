@@ -29,7 +29,7 @@ html {
 }
 
 .app_header img {
-    width: 35%;
+    width: 20%;
 }
 
 .hamburger-react {
@@ -331,6 +331,10 @@ select {
 } 
 
 @media screen and (max-width:800px) {
+    .app_header img {
+        width: 35%;
+    }
+    
     .hamburger-react {
         display: flex;
         z-index: 10;
@@ -342,7 +346,7 @@ select {
 
     .app_navbar-links {
         padding-top: 13%;
-        top: 2.4rem;
+        top: 2.9rem;
         z-index: 9;
     }
 

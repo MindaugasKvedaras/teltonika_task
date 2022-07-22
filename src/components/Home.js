@@ -60,7 +60,7 @@ const Home = () => {
                     <input type="text" id="fname" name="fName" placeholder="First Name" required minLength="3" maxLength="15" onChange={handleOnInputChange}/>
                     <input type="text" id="lname" name="lName" placeholder="Last Name" required minLength="3" maxLength="15" onChange={handleOnInputChange}/>
                     <input type="email" id="email" name="email" placeholder="E-mail" required onChange={handleOnInputChange}/>
-                    <input type="password" id="password" name="password" placeholder="Password" required onChange={handleOnInputChange}/>
+                    <input type="password" id="password" name="password" placeholder="Password" required minLength="5" maxLength="15" onChange={handleOnInputChange}/>
                     <input type="number" id="age" name="age" minLength="16" maxLength="80" step="1" placeholder="Age" required onChange={handleOnInputChange}/>
                 <p>Gender:</p>
                 <label>
