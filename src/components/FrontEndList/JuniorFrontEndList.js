@@ -6,6 +6,9 @@ const JuniorFrontEndList = () => {
 
   const [visibleVueTable, setVisibleVueTable] = useState(3);
   const [visibleReactTable, setVisibleReactTable] = useState(3);
+  const [isExportedVue, setIsExportedVue] = useState(false);
+  const [isExportedReact, setIsExportedReact] = useState(false);
+
 
   const showMoreItemsVueTable = () => {
     setVisibleVueTable((prevValue) => prevValue  + 3);
@@ -25,12 +28,58 @@ const JuniorFrontEndList = () => {
 
   const JuniorVueFrontenders = users.filter(user => {
     return user.category === "Front-end" && user.level === "Junior" && user.framework === "Vue";
-  })
+  });
   
   const JuniorReactFrontenders = users.filter(user => {
     return user.category === "Front-end" && user.level === "Junior" && user.framework === "React";
-  })
+  });
 
+  const downloadFile = ({ data, fileName, fileType }) => {
+    // Create a blob with the data we want to download as a file
+    const blob = new Blob([data], { type: fileType })
+    // Create an anchor element and dispatch a click event on it
+    // to trigger a download
+    const a = document.createElement('a')
+    a.download = fileName
+    a.href = window.URL.createObjectURL(blob)
+    const clickEvt = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    })
+    a.dispatchEvent(clickEvt)
+    a.remove()
+  }
+  
+  const exportJuniorVueFrontendersToJson = e => {
+    e.preventDefault()
+    downloadFile({
+      data: JSON.stringify(JuniorVueFrontenders),
+      fileName: 'Junior-Vue-Frontenders.json',
+      fileType: 'text/json',
+    });
+
+    setIsExportedVue(true);
+    setTimeout(() => {
+      setIsExportedVue(false);
+    }, 2500);
+
+  }
+
+  const exportJuniorReactFrontendersToJson = e => {
+    e.preventDefault()
+    downloadFile({
+      data: JSON.stringify(JuniorReactFrontenders),
+      fileName: 'Junior-React-Frontenders.json',
+      fileType: 'text/json',
+    });
+
+    setIsExportedReact(true);
+    setTimeout(() => {
+      setIsExportedReact(false);
+    }, 2500);
+
+  }
 
   return (
     <div className='app_userlist-box'>
@@ -88,6 +137,15 @@ const JuniorFrontEndList = () => {
             <Link to="/">add</Link> new developer
           </p>
         )}
+      <div className='app_json-btn'>
+        {!isExportedVue ? (
+            <button type='button' onClick={exportJuniorVueFrontendersToJson}>
+              Export Junior-Vue.js data to JSON file
+            </button>
+          ) : (
+            <p className="app_export-message">Successfully exported all data!</p>
+        )}  
+      </div>  
         <h1>Junior-React.js</h1>
         {JuniorReactFrontenders.length > 0 ? (
         <>
@@ -141,6 +199,15 @@ const JuniorFrontEndList = () => {
             <Link to="/">add</Link> new developer
           </p>
         )}
+      <div className='app_json-btn'>
+      {!isExportedReact ? (
+            <button type='button' onClick={exportJuniorReactFrontendersToJson}>
+              Export Junior-React.js data to JSON file
+            </button>
+          ) : (
+            <p className="app_export-message">Successfully exported all data!</p>
+        )}  
+      </div>  
       </div>
   )
 }

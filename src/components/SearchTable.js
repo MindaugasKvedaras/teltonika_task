@@ -1,14 +1,64 @@
 import React, { useState } from 'react';
+import { users } from './Home';
 
 const Table = ({ data, query }) => {
   const [visible, setVisible] = useState(5);
+  const [isExported, setIsExported] = useState(false);
 
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue  + 5);
+    window.scrollBy(0, 450);
   }
 
   const showLessItems = () => {
     setVisible((prevValue) => prevValue - 5);
+  }
+
+  const downloadFile = ({ data, fileName, fileType }) => {
+    // Create a blob with the data we want to download as a file
+    const blob = new Blob([data], { type: fileType })
+    // Create an anchor element and dispatch a click event on it
+    // to trigger a download
+    const a = document.createElement('a')
+    a.download = fileName
+    a.href = window.URL.createObjectURL(blob)
+    const clickEvt = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    })
+    a.dispatchEvent(clickEvt);
+    a.remove();
+  }
+  
+  const exportToJson = e => {
+    e.preventDefault()
+    downloadFile({
+      data: JSON.stringify(users),
+      fileName: 'all-developers.json',
+      fileType: 'text/json',
+    })
+
+    setIsExported(true);
+    setTimeout(() => {
+      setIsExported(false);
+    }, 2500);
+
+  }
+
+  const exportFilteredToJson = e => {
+    e.preventDefault()
+    downloadFile({
+      data: JSON.stringify(data),
+      fileName: 'filtered-developers.json',
+      fileType: 'text/json',
+    })
+
+    setIsExported(true);
+    setTimeout(() => {
+      setIsExported(false);
+    }, 2500);
+
   }
 
     return (
@@ -58,7 +108,33 @@ const Table = ({ data, query }) => {
       </div>
      ) : (
        null
-     )} 
+     )}
+     {!query ? (
+        <div className='app_json-btn'>
+          {!isExported ? (
+            <button type='button' onClick={exportToJson}>
+              Export all data to JSON file
+            </button>
+          ) : (
+            <p className="app_export-message">Successfully exported all data!</p>
+          )}  
+        </div>       
+     ) : ( 
+      <div className='app_json-btn'>
+        {!isExported ? (
+          <>
+            <button type='button' onClick={exportFilteredToJson}>
+              Export filtered data to JSON file
+            </button>
+            <button type='button' onClick={exportToJson}>
+              Export all data to JSON file
+            </button>
+          </>
+          ) : (
+            <p className="app_export-message">Successfully exported all data!</p>
+        )}  
+      </div>  
+     )}
      </>  
     );
   };

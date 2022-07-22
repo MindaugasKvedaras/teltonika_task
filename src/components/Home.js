@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import { Link } from "react-router-dom";
-import { olddevelopers } from '../developerdata/developers';
+import Usersdata from '../developerdata/users.json';
 
-
+const olddevelopersstring = JSON.stringify(Usersdata.users);
+const olddevelopers = JSON.parse(olddevelopersstring);
 export const users = [].concat(olddevelopers);
 
 let nextId = 51;
@@ -38,7 +38,7 @@ const Home = () => {
 
         e.preventDefault();
         const { fName, lName, age, gender, category, email, level, framework } = formData;
-        users.push({id: nextId, fName, lName, age, gender, category, email, level, framework });
+        users.unshift({id: nextId, fName, lName, age, gender, category, email, level, framework });
         console.log(users);
         nextId++;
         setFormData({fName: '', lName: '', age: '', email: ''});
