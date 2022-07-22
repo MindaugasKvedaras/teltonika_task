@@ -321,6 +321,10 @@ select {
       justify-content: flex-start;
     }
 
+    .app_userlist-box {
+        height: 100%;
+    }
+
     .app_userlist-box h1 {
         font-size: 25px;
     }
