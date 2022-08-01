@@ -24,15 +24,25 @@ const Home = () => {
 
     const handleOnInputChange = (e) => {
         const { value, name } = e.target;
-        setGender(e.target.value);
+        // setGender(e.target.value);
         setCategory(e.target.value);
-    
+
         // merge previous formData with the new value from input
         setFormData({
           ...formData,
           [name]: value,
         })
       }
+
+    const handleOnInputChangeGender = (e) => {
+        const { value, name } = e.target;
+        setGender(e.target.value);
+
+        setFormData({
+            ...formData,
+            [name]: value,
+          })  
+    }
     
     const onSubmit = (e) => {
 
@@ -64,9 +74,9 @@ const Home = () => {
                     <input type="number" id="age" name="age" minLength="16" maxLength="80" step="1" placeholder="Age" required onChange={handleOnInputChange}/>
                 <p>Gender:</p>
                 <label>
-                    <input type="radio" id="malegender" name="gender" value="Male" checked={gender === 'Male'} onChange={handleOnInputChange} />
+                    <input type="radio" id="malegender" name="gender" value="Male" checked={gender === 'Male'} onChange={handleOnInputChangeGender} />
                     Male
-                    <input type="radio" id="femalegender" name="gender" value="Female" checked={gender === 'Female'} onChange={handleOnInputChange} />
+                    <input type="radio" id="femalegender" name="gender" value="Female" checked={gender === 'Female'} onChange={handleOnInputChangeGender} />
                     Female
                 </label>
                 <label>Developer category:

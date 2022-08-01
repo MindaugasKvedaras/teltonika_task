@@ -16,11 +16,13 @@ const Layout = () => {
         <Header />
     </header>
         <div className='app_navbar-links_desktop'>
+          <Link to="/">
               <div className='app_dropdown-menu'>
                   <button className='app_dropdown-menu_home-btn'>
-                      <Link to="/">Add new developers</Link>
+                      <p>Add new developers</p>
                   </button>
               </div>
+          </Link>    
             <div className='app_dropdown-menu'>
               <button className='app_dropdown-menu_btn'>Front-end developers</button>
               <div className='app_dropdown-menu_content'>
@@ -35,20 +37,24 @@ const Layout = () => {
                   <Link to="/senior-back-end-developers">Senior</Link>
               </div>  
             </div>
+            <Link to="/search-developer">
             <div className='app_dropdown-menu'>
                   <button className='app_dropdown-menu_home-btn'>
-                      <Link to="/search-developer">Search developer</Link>
+                      <p>Search developer</p>
                   </button>
               </div>
+            </Link>  
           </div>
           <Hamburger color="#0078AA" fontSize={27} toggled={isOpen} toggle={setOpen} />
           {isOpen && (
             <div className='app_navbar-links'>
+            <Link to="/" onClick={closeHamburger}>
               <div className='app_dropdown-menu'>
                   <button className='app_dropdown-menu_home-btn'>
-                      <Link to="/" onClick={closeHamburger}>Add new developers</Link>
+                      <p>Add new developers</p>
                   </button>
               </div>
+            </Link>  
             <div className='app_dropdown-menu'>
               <button className='app_dropdown-menu_btn'>Front-end developers</button>
               <div className='app_dropdown-menu_content'>
@@ -63,11 +69,13 @@ const Layout = () => {
                   <Link to="/senior-back-end-developers" onClick={closeHamburger}>Senior</Link>
               </div>  
             </div>
-            <div className='app_dropdown-menu'>
+            <Link to="/search-developer" onClick={closeHamburger}>
+              <div className='app_dropdown-menu'>
                   <button className='app_dropdown-menu_home-btn'>
-                      <Link to="/search-developer" onClick={closeHamburger}>Search developer</Link>
+                      <p>Search developer</p>
                   </button>
               </div>
+            </Link>  
           </div>
           )}
       <Outlet />
